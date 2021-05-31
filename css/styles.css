@@ -924,6 +924,8 @@ img {
 .check-in-icon {
   display: inline-block;
   margin-right: 7px;
+  transition: fill var(--timing-duration) var(--transition-duration),
+    background-color var(--timing-duration) var(--transition-duration);
 }
 
 .checkbox:focus + .check-in-icon {
@@ -933,8 +935,8 @@ img {
   fill: var(--accent-text-color);
   background-color: var(--accent-text-color);
   background-image: url('../images/icon-check-1.svg');
-  background-size: contain;
-  background-origin: border-box;
+  /* background-size: contain;
+  background-origin: border-box; */
 }
 
 .checkbox {
