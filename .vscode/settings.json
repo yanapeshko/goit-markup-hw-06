@@ -1,0 +1,5 @@
+{
+    "prettier.requireConfig": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+}
