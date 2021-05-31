@@ -925,13 +925,18 @@ img {
   display: inline-block;
   margin-right: 7px;
 }
+
+.checkbox:focus + .check-in-icon {
+  background-image: url('../images/vector-agreement.svg');
+}
 .checkbox:checked + .check-in-icon {
   fill: var(--accent-text-color);
   background-color: var(--accent-text-color);
   background-image: url('../images/icon-check-1.svg');
-  /* background-size: contain;
-  background-origin: border-box; */
+  background-size: contain;
+  background-origin: border-box;
 }
+
 .checkbox {
   position: absolute;
   width: 1px;
