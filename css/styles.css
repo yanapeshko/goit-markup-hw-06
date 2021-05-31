@@ -854,8 +854,8 @@ img {
   margin-left: 2px;
 }
 .btn-send {
-  display: inline-flex;
-  text-align: center;
+  /* display: inline-flex;
+  text-align: center; */
   width: 200px;
   border: 0;
   padding: 10px 56px;
