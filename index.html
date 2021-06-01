@@ -406,26 +406,27 @@
             </li>
           </ul>
         </div>
-        <div class="footer-content-join">
-          <b class="join-title">Подпишитесь на рассылку</b>
-          <div class="form-field-fotter">
-            <input
-              type="tel"
-              class="form-input-footer"
-              name="e-mail"
-              id="e-mail"
-              placeholder="E-mail"
-            />
-            <label for="e-mail"></label>
-
-            <button class="btn-join" type="submit">
-              Подписаться
-              <svg class="icon-join" width="24" height="24">
-                <use href="./images/icon.svg#icon-icon-send-3"></use>
-              </svg>
-            </button>
+        <form class="form js-speaker-form">
+          <div class="footer-content-join">
+            <b class="join-title">Подпишитесь на рассылку</b>
+            <div class="form-field-fotter">
+              <label for="e-mail"></label>
+              <input
+                type="tel"
+                class="form-input-footer"
+                name="e-mail"
+                id="e-mail"
+                placeholder="E-mail"
+              />
+              <button class="btn-join" type="submit">
+                Подписаться
+                <svg class="icon-join" width="24" height="24">
+                  <use href="./images/icon.svg#icon-icon-send-3"></use>
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </footer>
     <div class="backdrop is-hidden" data-backdrop>
@@ -435,7 +436,7 @@
             <use href="./images/modalclose.svg#icon-modalclose-1"></use>
           </svg>
         </button>
-        <form class="signing-form" autocomplete="off">
+        <form class="js-speaker-form signing-form" autocomplete="off">
           <div class="form-field">
             <b class="title">Оставьте свои данные, мы вам перезвоним</b>
             <label for="name">Имя</label>
@@ -536,6 +537,21 @@
       function logBackdropClick() {
         console.log('Это клик в бекдроп');
       }
+    </script>
+    <script>
+      (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`),
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
     </script>
   </body>
 </html>

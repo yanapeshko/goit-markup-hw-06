@@ -339,27 +339,44 @@
             </li>
           </ul>
         </div>
-        <div class="footer-content-join">
-          <b class="join-title">Подпишитесь на рассылку</b>
-          <div class="form-field-fotter">
-            <input
-              type="tel"
-              class="form-input-footer"
-              name="e-mail"
-              id="e-mail"
-              placeholder="E-mail"
-            />
-            <label for="e-mail"></label>
+        <form class="form js-speaker-form">
+          <div class="footer-content-join">
+            <b class="join-title">Подпишитесь на рассылку</b>
+            <div class="form-field-fotter">
+              <label for="e-mail"></label>
+              <input
+                type="tel"
+                class="form-input-footer"
+                name="e-mail"
+                id="e-mail"
+                placeholder="E-mail"
+              />
 
-            <button class="btn-join" type="submit">
-              Подписаться
-              <svg class="icon-join" width="24" height="24">
-                <use href="./images/icon.svg#icon-icon-send-3"></use>
-              </svg>
-            </button>
+              <button class="btn-join" type="submit">
+                Подписаться
+                <svg class="icon-join" width="24" height="24">
+                  <use href="./images/icon.svg#icon-icon-send-3"></use>
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </footer>
+    <script>
+      (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`),
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>

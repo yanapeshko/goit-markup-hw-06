@@ -706,6 +706,8 @@ img {
   font-size: 16px;
   line-height: 1.8;
   letter-spacing: 0.06em;
+  border: 0;
+  cursor: pointer;
 
   color: var(--title-text-color-secondary);
   background-color: var(--accent-text-color);
